@@ -8,7 +8,7 @@ stack of bizarre numbers.
 Additionally, the bizarre number struture and the stack node structure are declared,
 used to organize the stack and it's data.
 */
-
+#include <stdio.h>
 
 typedef struct 
 {
@@ -17,17 +17,18 @@ typedef struct
     int num; /* */
 } BizarreNumber_t;
 
-typedef struct
+struct Node
 {
     BizarreNumber_t info; /*data point*/
     struct Node *next; /*pointer to the next node in the stack*/
-} Node;
-typedef Node* StackNodePtr; //a pointer node type called StackNodePtr
+};
+typedef struct Node node;
+typedef node *StackNodePtr; //a pointer node type called StackNodePtr
 
-
+/* node functions */
 /* stack functions */
 
-void push(StackNodePtr *topPtr, BizarreNumber_t info);
+void push (StackNodePtr *topPtr, BizarreNumber_t info);
 //pushes a bizarreNumber to the stack
 BizarreNumber_t pop(StackNodePtr *topPtr);
 //takes the top bizarreNumber off, returns it
@@ -55,3 +56,4 @@ int isPerfectSquare(int num);
 
 StackNodePtr recoverCipher(StackNodePtr mainStack, StackNodePtr helperStack); 
 // ^recovers and returns stack of original inputs from 2 stacks
+
