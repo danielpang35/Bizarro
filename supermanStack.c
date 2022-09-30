@@ -57,3 +57,19 @@ int isPerfectSquare(int num)
 /* recovery function */
 
 StackNodePtr recoverCipher(StackNodePtr mainStack, StackNodePtr helperStack)  
+StackNodePtr recoveredStack = NULL;
+    int recoveredNum;
+    BizarreNumber_t num;
+    while(mainStack.next != null)
+    {
+        num = mainStack.info;
+        if(mainstack.data.type == sqr)
+        {
+            recoveredNum = mainstack.info.num;
+            operations = mainstack.info.nrOfOpr;
+            recoveredNum = pow(recoveredNum, operations);
+            num = (BizarreNumber_t) {.type = }
+            push(&recoveredStack, recoveredNum);
+        }
+    }
+}
